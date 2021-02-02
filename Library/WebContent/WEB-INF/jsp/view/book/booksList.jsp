@@ -32,7 +32,7 @@
 				<input type="hidden" id="bookCode" name="bookCode">
 			</form>
 		<div>
-			<table border="1" style="background-color: white;">
+			<table border="1" style="background-color: white;" >
 				<tr>
 					<th width="100">도서코드</th>
 					<th width="200">도서명</th>

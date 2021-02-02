@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -63,6 +64,11 @@ tr:nth-child(even) {
   background-color: #bababa;
 }
 </style>
+<script type="text/javascript">
+	function LoginPlz() {
+		alert("로그인 후 이용 가능합니다.");
+	}
+</script>
 <body>
 
 <!-- Navbar -->
@@ -70,9 +76,11 @@ tr:nth-child(even) {
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="main.do" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
+    <a href="memberList.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MEMBER LIST</a>
     <a href="adminPage.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADMIN</a>
     <a href="booksList.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOOKS</a>
+    <a href="login.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN IN</a>
+    <a href="memberJoinForm.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN UP</a>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">

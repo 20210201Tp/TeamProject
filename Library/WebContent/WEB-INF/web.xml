@@ -13,9 +13,8 @@
 		<servlet-name>FrontController</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-		
 	
-	<display-name>Library</display-name>
+	<display-name>Librarys</display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

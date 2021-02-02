@@ -20,6 +20,14 @@ import co.micol.book.web.AdminPage;
 import co.micol.book.web.BookDecrease;
 import co.micol.book.web.BooksList;
 import co.micol.book.web.MainCommand;
+import co.micol.member.web.IdCheck;
+import co.micol.member.web.Login;
+import co.micol.member.web.LogoinForm;
+import co.micol.member.web.Logout;
+import co.micol.member.web.MemberJoin;
+import co.micol.member.web.MemberJoinForm;
+import co.micol.member.web.MemberList;
+import co.micol.member.web.MemberPage;
 import co.micol.book.web.BookUpdateForm;
 
 @WebServlet("/FrontController")
@@ -40,8 +48,16 @@ public class FrontController extends HttpServlet {
 		map.put("/bookDecrease.do", new BookDecrease());
 		map.put("/bookUpdateForm.do", new BookUpdateForm());
 		map.put("/bookUpdate.do", new BookUpdate());
-		map.put("/bookDelete.do", new BookDelete());
-		map.put("/adminPage.do", new AdminPage());
+		map.put("/bookDelete.do", new BookDelete()); //여기 까지가 책
+		map.put("/adminPage.do", new AdminPage()); // 멤버 관련 기능
+		map.put("/loginForm.do", new LogoinForm());
+		map.put("/login.do", new Login());
+		map.put("/logout.do", new Logout());
+		map.put("/memberJoinForm.do", new MemberJoinForm());
+		map.put("/memberJoin.do", new MemberJoin());
+		map.put("/memberPage.do", new MemberPage());
+		map.put("/idCheck.do", new IdCheck());
+		map.put("/memberList.do", new MemberList());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
