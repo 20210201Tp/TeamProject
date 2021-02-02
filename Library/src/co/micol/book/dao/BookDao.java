@@ -75,7 +75,7 @@ public class BookDao extends DAO{
 	
 	public int update(BookVo vo) {
 		int n = 0;
-		String sql = "UPDATE BOOK SET BOOKNAME =? WHERE BOOKCODE = ?";
+		String sql = "UPDATE BOOK SET BOOKNAME = ? WHERE BOOKCODE = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getBookName());

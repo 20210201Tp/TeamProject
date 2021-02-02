@@ -15,7 +15,7 @@ public class BookUpdate implements Command {
 		BookVo vo = new BookVo();
 		vo.setBookCode(request.getParameter("bookCode"));
 		vo.setBookName(request.getParameter("bookName"));
-		
+
 		dao.update(vo);
 		
 		return "booksList.do";

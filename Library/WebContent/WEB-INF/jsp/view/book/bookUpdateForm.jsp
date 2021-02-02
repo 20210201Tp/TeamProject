@@ -30,7 +30,7 @@
 				<table border="1" style="background-color: white;">
 					<tr>
 						<th>도서코드</th>
-						<td><input type="text" id="bookCode" name="bookCode" style="border: none;" disabled="disabled" value="${vo.bookCode }"></td>
+						<td><input type="text" id="bookCode" name="bookCode" style="border: none;" readonly="readonly" value="${vo.bookCode }"></td>
 						<th>도서명</th>
 						<td><input type="text" id="bookName" name="bookName" style="border: none;" required="required" value="${vo.bookName }"></td>
 					</tr>
