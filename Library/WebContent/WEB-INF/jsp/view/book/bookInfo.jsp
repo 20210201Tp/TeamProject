@@ -92,8 +92,10 @@
 			</c:choose>
 				&nbsp;
 			<button type="button" onclick="history.back()">돌아가기</button>
-			&nbsp;<button type="button" onclick=updateAlert()>수정</button>
-			&nbsp;<button type="button" onclick=deleteAlert()>삭제</button>
+			<c:if test="${sMemberAuth eq 'ADMIN' }">
+				&nbsp;<button type="button" onclick=updateAlert()>수정</button>
+				&nbsp;<button type="button" onclick=deleteAlert()>삭제</button>
+			</c:if>
 		</div>
 	</div>
 </div>

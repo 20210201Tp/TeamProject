@@ -44,7 +44,7 @@
 			<h1 style="font-family: Georgia, Serif; font-size: 50px; font-weight: bold; font-style: italic; color: white;">Write</h1>
 		</div>
 		<div>
-			<form action="/Library/bookInsert.do" id="frm" name="frm" method="post">
+			<form action="bookInsert.do" id="frm" name="frm" method="post">
 				<table border="1" style="background-color: white;">
 					<tr>
 						<th>도서코드</th>

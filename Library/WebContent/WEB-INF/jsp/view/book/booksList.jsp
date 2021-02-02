@@ -15,6 +15,7 @@
 <script type="text/javascript">
 	function formSubmit(str) {
 		frm.bookCode.value = str;
+		alert(frm.bookCode.value);
 		frm.submit();
 	}
 </script>
@@ -45,7 +46,7 @@
 				</c:if>
 				<c:if test="${not empty list }">
 					<c:forEach var="vo" items="${list }">
-						<tr style="cursor: pointer;" class="row" onClick="formSubmit(${vo.bookCode })">
+						<tr style="cursor: pointer;" onClick="formSubmit(${vo.bookCode })">
 							<td align="center">${vo.bookCode }</td>
 							<td>&nbsp;${vo.bookName }</td>
 							<td align="center">${vo.quantity }</td>
@@ -63,9 +64,11 @@
 				</c:if>
 			</table>
 		</div><br/>
-		<div>
-			<button type="button" onclick="location.href='bookForm.do'">도서등록</button>	
-		</div>
+		<c:if test="${sMemberAuth eq 'ADMIN' }">
+			<div>
+				<button type="button" onclick="location.href='bookForm.do'">도서등록</button>	
+			</div>
+		</c:if>
 	</div>
 </div>
 </body>

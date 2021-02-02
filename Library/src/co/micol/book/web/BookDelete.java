@@ -14,7 +14,6 @@ public class BookDelete implements Command {
 		BookDao dao = new BookDao();
 		BookVo vo = new BookVo();
 		vo.setBookCode(request.getParameter("bookCode"));
-		
 		dao.delete(vo);
 		
 		return "booksList.do";

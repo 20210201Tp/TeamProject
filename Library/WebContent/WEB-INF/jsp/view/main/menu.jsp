@@ -81,7 +81,9 @@ tr:nth-child(even) {
     	<a href="memberList.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MEMBER LIST</a>
     	<a href="adminPage.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADMIN</a>
     </c:if>
-    <a href="memberPage.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MY PAGE</a>
+    <c:if test="${sMemberAuth ne 'ADMIN' }">
+    	<a href="memberPage.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MY PAGE</a>
+    </c:if>
     <a href="booksList.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOOKS</a>
     <a href="logout.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN OUT</a>
     <div class="w3-dropdown-hover w3-hide-small">
