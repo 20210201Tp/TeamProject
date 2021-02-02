@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.micol.book.common.Command;
 
-public class LogoinForm implements Command {
+public class LoginForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {

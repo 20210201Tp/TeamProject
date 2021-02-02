@@ -51,6 +51,7 @@
 			<form action="bookUpdate.do" id="frm" name="frm" method="post">
 				<input type="hidden" id="bookCode" name="bookCode" value="${vo.bookCode }">
 				<input type="hidden" id="bCount" name="bCount" value="${vo.bCount }">
+				<input type="hidden" id="memberId" name="memberId" value="${sMemberId }">
 			</form>
 		<div>
 			<table border="1" style="background-color: white;">

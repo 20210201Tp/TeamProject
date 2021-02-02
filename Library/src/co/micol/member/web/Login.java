@@ -18,13 +18,12 @@ public class Login implements Command {
 		vo.setMemberPassword(request.getParameter("memberPassword"));
 		vo = dao.login(vo);
 
-
 		if (vo.getMemberAuth() != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("memberId", vo.getMemberId());
-			session.setAttribute("mAuth", vo.getMemberAuth());
+			session.setAttribute("sMemberId", vo.getMemberId());
+			session.setAttribute("sMemberAuth", vo.getMemberAuth());
 			request.setAttribute("vo", vo);
 		}
-		return "view/member/login";
+		return "main.do";
 	}
 }

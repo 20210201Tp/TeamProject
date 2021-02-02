@@ -1,35 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Page</title>
-</head>
-<body>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<style>
+body {
+	background-image: url("/Library/img/바다2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
+<script type="text/javascript">
+	function returnBook(code) {
+		var yn = confirm("반납하시겠습니까?")
+		if(yn) {
+		frm.memberId.value = document.getElementById('mId').value;	
+		frm.bookCode.value = code;
+		alert("반납 완료!");
+		frm.submit();
+		}
+	}
+</script>
+
+<jsp:include page="../main/menu.jsp" />
+
+<div class="w3-content" style="max-width: 1300px; margin-top: 46px">
 	<div align="center">
-	
-		<table width="1200" height="400" border="1" cellpadding="2" cellspacing="10">
-				<!-- 상단 -->
-			<tr height="10" width="100%">
-				<td colspan="2"> 마이페이지
-				</td>
+		<div>
+			<h1 style="font-family: Georgia, Serif; font-size: 50px; font-weight: bold; font-style: italic; color: white;">My Page</h1>
+		</div>
+		<table border="1" style="background: white;">
+			<tr>
+				<th width="200">대출일</th>
+				<th width="150">도서코드</th>
+				<th width="150">아이디</th>
+				<th width="200">반납일</th>
+				<th width="200">반납예정일</th>
+				<th width="150">반납하기</th>
 			</tr>
-			
-				<!-- left -->
-			<tr height="450" width="100%"> 
-				<td width="150">목록</td>
-				
-			
-				<!-- main -->
-				<td>도서대여 목록</td>
-			</tr>
-			
-			<tr height="45">
-				<td colspan="2">하단</td>
-			</tr>	
-				
+			<c:forEach var="vo" items="${list }">
+				<tr>
+					<td align="center">${vo.rentalDate }</td>
+					<td align="center">${vo.bookCode }</td>
+					<td align="center">${vo.memberId }</td>
+					<td align="center">${vo.returnDate }</td>
+					<td align="center">${vo.expReturnDate }</td>
+					<c:if test="${vo.returnDate eq null || vo.returnDate eq ''}">
+						<td>
+							<button onclick=returnBook(${vo.bookCode})>반납</button>
+							<input type="hidden" id="mId" name="mId" value="${vo.memberId }">
+						</td>
+					</c:if>
+				</tr>
+			</c:forEach>
 		</table>
+		<form action="bookReturn.do" id="frm" name="frm" method="post">
+			<input type="hidden" id="memberId" name="memberId">
+			<input type="hidden" id="bookCode" name="bookCode">
+		</form>
 	</div>
+</div>
 </body>
 </html>

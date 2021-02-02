@@ -37,24 +37,28 @@ public class BookRntDao extends DAO{
 		return list;
 	}
 	
-	public BookRntVo select(BookRntVo vo) {
-		String sql = "SELECT * FROM BOOKRENTAL WHERE MEMBERID = ?";
+	public ArrayList<BookRntVo> select(BookRntVo vo) {
+		ArrayList<BookRntVo> list = new ArrayList<BookRntVo>();
+		String sql = "SELECT * FROM BOOKRENTAL WHERE MEMBERID = ? ORDER BY RENTALDATE";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getMemberId());
 			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
+			while(rs.next()) {
+				vo = new BookRntVo();
 				vo.setRentalDate(rs.getDate("rentaldate"));
 				vo.setBookCode(rs.getString("bookcode"));
 				vo.setMemberId(rs.getString("memberid"));
 				vo.setReturnDate(rs.getString("returndate"));
 				vo.setExpReturnDate(rs.getString("expreturndate"));
+				list.add(vo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
-		return vo;
+		return list;
 	}
 	
 	public int insert(BookRntVo vo) {
@@ -62,8 +66,8 @@ public class BookRntDao extends DAO{
 		String sql = "INSERT INTO BOOKRENTAL(RENTALDATE, BOOKCODE, MEMBERID) VALUES(sysdate , ?, ?)";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(2, vo.getBookCode());
-			psmt.setString(3, vo.getMemberId());
+			psmt.setString(1, vo.getBookCode());
+			psmt.setString(2, vo.getMemberId());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -74,6 +78,20 @@ public class BookRntDao extends DAO{
 	public int returnBook(BookRntVo vo) {
 		int n = 0;
 		String sql = "UPDATE BOOKRENTAL SET RETURNDATE = SYSDATE WHERE MEMBERID = ? AND BOOKCODE = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberId());
+			psmt.setString(2, vo.getBookCode());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return n;
+	}
+	
+	public int delete(BookRntVo vo) {
+		int n = 0;
+		String sql = "DELETE BOOKRENTAL WHERE MEMBERID = ? AND BOOKCODE = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getMemberId());
