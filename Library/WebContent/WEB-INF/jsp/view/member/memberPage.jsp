@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <style>
 body {
-	background-image: url("/Library/img/바다2.jpg");
+	background-image: url("/Library/img/도서관1.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -16,6 +16,15 @@ body {
 		frm.bookCode.value = code;
 		alert("반납 완료!");
 		frm.submit();
+		}
+	}
+	
+	function memberDel() {
+		if(document.getElementById('mId') != null) {
+			alert("반납을 모두 완료하신 후 회원탈퇴가 가능합니다.");
+		} else {
+			frm.action = "memberDeleteForm.do";
+			frm.submit();
 		}
 	}
 </script>
@@ -45,13 +54,14 @@ body {
 					<td align="center">${vo.expReturnDate }</td>
 					<c:if test="${vo.returnDate eq null || vo.returnDate eq ''}">
 						<td>
-							<button onclick=returnBook(${vo.bookCode})>반납</button>
+							<button onclick="returnBook('${vo.bookCode}')">반납</button>
 							<input type="hidden" id="mId" name="mId" value="${vo.memberId }">
 						</td>
 					</c:if>
 				</tr>
 			</c:forEach>
-		</table>
+		</table><br/>
+		<button onclick=memberDel()>회원탈퇴</button>
 		<form action="bookReturn.do" id="frm" name="frm" method="post">
 			<input type="hidden" id="memberId" name="memberId">
 			<input type="hidden" id="bookCode" name="bookCode">

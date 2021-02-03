@@ -15,7 +15,6 @@ public class BookInsert implements Command{
 		BookVo vo = new BookVo();
 		vo.setBookCode(request.getParameter("bookCode"));
 		vo.setBookName(request.getParameter("bookName"));
-		System.out.println(request.getParameter("bookCode"));
 		dao.insert(vo);
 		
 		return "booksList.do";

@@ -7,7 +7,7 @@
 		background-color: lightyellow;
 	}
 	body {
-		background-image: url("/Library/img/바다2.jpg");
+		background-image: url("/Library/img/도서관1.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
@@ -17,7 +17,6 @@
 		var yn = confirm("대출하시겠습니까?")
 		if(yn) {
 			frm.action="bookDecrease.do";
-			alert("대출 완료!");
 			frm.submit();
 		}
 	}
@@ -82,14 +81,16 @@
 			</table>
 		</div><br/>
 		<div>
-			<c:choose>
-				<c:when test="${vo.bCount ne 0}">
-					<button type="button" onclick=editAlert()>도서대출</button>
-				</c:when>
-				<c:when test="${vo.bCount eq 0}">
-					<button style="background: #f24a41;">대출불가</button>
-				</c:when>
-			</c:choose>
+			<c:if test="${sMemberAuth ne 'ADMIN' }">
+				<c:choose>
+					<c:when test="${vo.bCount ne 0}">
+						<button type="button" onclick=editAlert()>도서대출</button>
+					</c:when>
+					<c:when test="${vo.bCount eq 0}">
+						<button style="background: #f24a41;">대출불가</button>
+					</c:when>
+				</c:choose>
+			</c:if>
 				&nbsp;
 			<button type="button" onclick="history.back()">돌아가기</button>
 			<c:if test="${sMemberAuth eq 'ADMIN' }">

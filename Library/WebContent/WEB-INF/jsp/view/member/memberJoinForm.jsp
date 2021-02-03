@@ -3,7 +3,7 @@
     
 <style type="text/css">
 	body {
-		background-image: url("/Library/img/바다2.jpg");
+		background-image: url("/Library/img/기차.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}

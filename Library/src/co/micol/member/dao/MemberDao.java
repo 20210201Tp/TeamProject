@@ -119,6 +119,22 @@ public class MemberDao extends DAO {
 		return vo;
 	}
 	
+	public int delete(MemberVo vo) {
+		String sql = "DELETE FROM MEMBER WHERE MEMBERID = ? AND MEMBERPASSWORD = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberId());
+			psmt.setString(2, vo.getMemberPassword());
+			n = psmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return n;
+	}
+	
 	
 	private void close() {
 		try {

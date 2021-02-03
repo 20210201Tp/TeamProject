@@ -23,9 +23,13 @@ import co.micol.book.web.BooksList;
 import co.micol.book.web.MainCommand;
 import co.micol.member.web.IdCheck;
 import co.micol.member.web.Login;
+import co.micol.member.web.LoginFail;
 import co.micol.member.web.LoginForm;
 import co.micol.member.web.Logout;
+import co.micol.member.web.MemberDelete;
+import co.micol.member.web.MemberDeleteForm;
 import co.micol.member.web.MemberJoin;
+import co.micol.member.web.MemberJoinFail;
 import co.micol.member.web.MemberJoinForm;
 import co.micol.member.web.MemberList;
 import co.micol.member.web.MemberPage;
@@ -54,12 +58,16 @@ public class FrontController extends HttpServlet {
 		map.put("/loginForm.do", new LoginForm());
 		map.put("/login.do", new Login());
 		map.put("/logout.do", new Logout());
+		map.put("/loginFail.do", new LoginFail());
 		map.put("/memberJoinForm.do", new MemberJoinForm());
 		map.put("/memberJoin.do", new MemberJoin());
+		map.put("/memberJoinFail.do", new MemberJoinFail());
 		map.put("/memberPage.do", new MemberPage());
 		map.put("/idCheck.do", new IdCheck());
 		map.put("/memberList.do", new MemberList());
 		map.put("/bookReturn.do", new BookReturn());
+		map.put("/memberDeleteForm.do", new MemberDeleteForm());
+		map.put("/memberDelete.do", new MemberDelete());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

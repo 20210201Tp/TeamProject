@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <style>
 	body {
-		background-image: url("/Library/img/연못.jpg");
+		background-image: url("/Library/img/도서관.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
@@ -52,7 +52,9 @@
 							<input type="text" id="bookCode" name="bookCode" style="border: none;" required="required" value="0000">
 						</td>
 						<th>도서명</th>
-						<td><input type="text" id="bookName" name="bookName" style="border: none;" required="required"></td>
+						<td>
+							<input type="text" id="bookName" name="bookName" style="border: none;" required="required">
+						</td>
 					</tr>
 				</table><br/>
 				<button type="button" onclick="checkLength()">도서등록</button> &nbsp;

@@ -28,7 +28,6 @@ public class BookReturn implements Command{
 		BookVo bVo = new BookVo();
 		bVo.setBookCode(ans);
 		bDao.select(bVo);
-		System.out.println(bVo.getbCount());
 		bVo.setbCount(bVo.getbCount() + 1);
 		
 		BookDao bao = new BookDao();

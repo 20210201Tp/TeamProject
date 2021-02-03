@@ -75,46 +75,51 @@ tr:nth-child(even) {
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
+  	<img alt="" src="Library/img/연못.jpg">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="main.do" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <c:if test="${sMemberAuth eq 'ADMIN' }">
     	<a href="memberList.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MEMBER LIST</a>
     	<a href="adminPage.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADMIN</a>
     </c:if>
-    <c:if test="${sMemberAuth ne 'ADMIN' }">
+    <c:if test="${sMemberAuth eq 'USERS' }">
     	<a href="memberPage.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MY PAGE</a>
     </c:if>
     <a href="booksList.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOOKS</a>
     <a href="logout.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN OUT</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <button class="w3-padding-large w3-button" title="More">${sMemberId }&nbsp;&nbsp;<i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
+      	<c:if test="${sMemberAuth eq 'ADMIN' }">
+      		<a href="adminPage.do" class="w3-bar-item w3-button">ADMIN</a>
+      		<a href="memberList.do" class="w3-bar-item w3-button">MEMBER LIST</a>
+      	</c:if>
+      	<c:if test="${sMemberAuth eq 'USERS' }">
+        	<a href="memberPage.do" class="w3-bar-item w3-button">MY PAGE</a>
+        	<a href="booksList.do" class="w3-bar-item w3-button">BOOKS</a>
+        </c:if>
+        <a href="logout.do" class="w3-bar-item w3-button">SIGN OUT</a>
       </div>
     </div>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
 </c:when>
 <c:otherwise>
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
+  	<img alt="" src="Library/img/연못.jpg">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="main.do" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a onclick="LoginPlz()" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOOKS</a>
     <a href="loginForm.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN IN</a>
     <a href="memberJoinForm.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGN UP</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <button class="w3-padding-large w3-button" title="More">더보기&nbsp;&nbsp;<i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
+        <a href="loginForm.do" class="w3-bar-item w3-button">SIGN IN</a>
+        <a href="memberJoinForm.do" class="w3-bar-item w3-button">SIGN UP</a>
       </div>
     </div>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
 </c:otherwise>

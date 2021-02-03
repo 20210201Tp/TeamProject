@@ -2,10 +2,13 @@
     pageEncoding="UTF-8"%>
     
 <style>
-body {
-		background-image: url("/Library/img/바다2.jpg");
+	body {
+		background-image: url("/Library/img/기차.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+	}
+	input {
+		width: 95%;
 	}
 </style>
 
@@ -21,11 +24,15 @@ body {
 				<table border="1" style="background: white;">
 					<tr>
 						<th width="100">아 이 디</th>
-						<td width="150"><input type="text" id="memberId" name = "memberId" value=${vo.memberId } ><br></td>
+						<td width="150">
+							<input type="text" id="memberId" name = "memberId" style="border: none;">
+						</td>
 					</tr>
 					<tr>
 						<th width="100">패스워드</th>
-						<td width="150"><input type="password" id="memberPassword" name = "memberPassword" value="${vo.memberPassword }" ></td>	
+						<td width="150">
+							<input type="password" id="memberPassword" name = "memberPassword" style="border: none; background: #bababa;">
+						</td>	
 					</tr>
 				</table>
 			</div><br>

@@ -7,7 +7,7 @@
 		background-color: lightyellow;
 	}
 	body {
-		background-image: url("/Library/img/바다2.jpg");
+		background-image: url("/Library/img/도서관1.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	function formSubmit(str) {
 		frm.bookCode.value = str;
-		alert(frm.bookCode.value);
 		frm.submit();
 	}
 </script>
@@ -46,7 +45,7 @@
 				</c:if>
 				<c:if test="${not empty list }">
 					<c:forEach var="vo" items="${list }">
-						<tr style="cursor: pointer;" onClick="formSubmit(${vo.bookCode })">
+						<tr style="cursor: pointer;" class="row" onClick="formSubmit('${vo.bookCode}')">
 							<td align="center">${vo.bookCode }</td>
 							<td>&nbsp;${vo.bookName }</td>
 							<td align="center">${vo.quantity }</td>

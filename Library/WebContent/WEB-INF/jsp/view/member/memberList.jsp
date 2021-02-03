@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <style>
 body {
-		background-image: url("/Library/img/바다2.jpg");
+		background-image: url("/Library/img/도서관1.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}

@@ -23,9 +23,9 @@ public class MemberJoin implements Command {
 		String viewPage = null;
 		request.setAttribute("vo", vo);
 		if(n != 0) {
-			viewPage = "view/member/memberJoinSuccess";
-		}else {
-			viewPage = "view/member/memberJoinFail";
+			viewPage = "main.do";
+		} else {
+			viewPage = "memberJoinFail.do";
 		}
 		return viewPage;
 	}

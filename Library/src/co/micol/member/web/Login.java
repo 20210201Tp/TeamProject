@@ -14,6 +14,7 @@ public class Login implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		MemberDao dao = new MemberDao();
 		MemberVo vo = new MemberVo();
+		String viewPage = null;
 		vo.setMemberId(request.getParameter("memberId"));
 		vo.setMemberPassword(request.getParameter("memberPassword"));
 		vo = dao.login(vo);
@@ -23,7 +24,10 @@ public class Login implements Command {
 			session.setAttribute("sMemberId", vo.getMemberId());
 			session.setAttribute("sMemberAuth", vo.getMemberAuth());
 			request.setAttribute("vo", vo);
+			viewPage = "main.do";
+		} else {
+			viewPage = "loginFail.do";
 		}
-		return "main.do";
+		return viewPage;
 	}
 }

@@ -10,7 +10,7 @@
 		background-color: lightyellow;
 	}
 	body {
-		background-image: url("/Library/img/바다.jpg");
+		background-image: url("/Library/img/도서관1.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
@@ -34,7 +34,7 @@
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 	<div align="center">
 		<div>
-			<h1 style="font-family: Georgia, Serif; font-size: 50px; font-weight: bold; font-style: italic; color: white;">대출 현황</h1>
+			<h1 style="font-family: Georgia, Serif; font-size: 50px; font-weight: bold; font-style: italic; color: white;">Loan Status</h1>
 		</div>
 			<form action="bookReturn.do" id="frm" name="frm" method="post">
 				<input type="hidden" id="memberId" name="memberId">
@@ -59,7 +59,7 @@
 							<td align="center">${vo.expReturnDate }</td>
 							<c:if test="${vo.returnDate eq null || vo.returnDate eq ''}">
 								<td>
-									<button onclick=returnBook(${vo.bookCode})>반납</button>
+									<button onclick="returnBook('${vo.bookCode}')">반납</button>
 									<input type="hidden" id="mId" name="mId" value="${vo.memberId }">
 								</td>
 							</c:if>
