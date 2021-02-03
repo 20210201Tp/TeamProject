@@ -13,8 +13,9 @@
 <!-- Page content -->
 <div class="w3-content" style="max-width: 2000px; margin-top: 46px">
 	<div align="center">
-		<img src="/Library/img/바다.jpg" width="900" height="400" style="border: 3pt solid white;">
-		<h1 style="font-family: Georgia, Serif; font-size: 90px; font-weight: bold; font-style: italic; color: white;">WELCOME. Library</h1>
+		<img src="/Library/img/도서관1.jpg" width="900" height="400" style="border: 3pt solid white;">
+		<h1 style="font-family: Georgia, Serif; font-size: 80px; font-weight: bold; font-style: italic; color: white;">WELCOME. LIBRARY</h1>
+		<h1 style="font-family: Georgia, Serif; font-size: 45px; font-weight: bold; font-style: italic; color: white;">Your Library</h1>
 	</div>
 </div>
 </body>
