@@ -63,7 +63,7 @@
 				</tr>
 				<tr>
 					<td align="center">${vo.bookCode }</td>
-					<td>&nbsp;${vo.bookName }</td>
+					<td align="center">${vo.bookName }</td>
 					<td align="center">${vo.quantity }</td>
 					<td align="center">${vo.bCount }</td>
 					<c:choose>
@@ -76,7 +76,7 @@
 					</c:choose>
 				</tr>
 				<tr>
-					<td colspan="5"><img src="/Library/img/바다.jpg"></td>
+					<td colspan="5"><img src="/Library/img/책.jpg" style="width: 1000px"></td>
 				</tr>
 			</table>
 		</div><br/>
